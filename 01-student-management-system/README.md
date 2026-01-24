@@ -40,5 +40,5 @@ This project implements a complete Student Management System focusing on:
 
 1. **Clone and navigate to project:**
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Sajghaa/java-oop-100-projects.git
 cd java-oop-projects/01-student-management-system
