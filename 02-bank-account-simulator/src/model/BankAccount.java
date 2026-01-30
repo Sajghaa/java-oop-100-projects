@@ -31,6 +31,6 @@ public class BankAccount {
     }
 
     public String getAccountInfo(){
-        return ownerName + " | Acc:" + accountNumber + "| Balance" + balance;
+        return ownerName + " | Acc: " + accountNumber + "| Balance: " + balance;
     }
 }
