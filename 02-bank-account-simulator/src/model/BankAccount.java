@@ -7,7 +7,7 @@ import java.util.UUID;
 // The tips I used here
 // 1. Use final for immutable fields
 // 2. Use BigDecimal for money (Critical)
-// 3. Add Acount type and creation date
+// 3. Add Account type and creation date
 public class BankAccount{
     private final String accountNumber;
     private final String ownerName;
