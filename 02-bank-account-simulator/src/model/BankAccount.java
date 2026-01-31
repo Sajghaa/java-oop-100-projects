@@ -1,17 +1,35 @@
 package model;
 
-import java.math.BigDecimal;
-import java.util.Objects;
-import java.util.UUID;
+public class BankAccount {
+    private String accountNumber;
+    private String ownerName;
+    private double balance;
 
-// The tips I used here
-// 1. Use final for immutable fields
-// 2. Use BigDecimal for money (Critical)
-// 3. Add Account type and creation date
-public class BankAccount{
-    private final String accountNumber;
-    private final String ownerName;
-    private BigDecimal balance;
-    private final AccountType type;
-    private final java.time.LocalDateTime createdAt;
+    public BankAccount(String accountNumber, String ownerName, double balance){
+        this.accountNumber = accountNumber;
+        this.ownerName = ownerName;
+        this.balance = balance;
+    }
+
+    public void deposit(double amount){
+        if (amount > 0){
+            balance += amount;
+        }
+    }
+
+    public boolean withdraw(double amount){
+        if (amount > 0 && amount <= balance){
+            balance -= amount;
+            return true;
+        }
+        return false;
+    }
+
+    public double getBalance(){
+        return balance;
+    }
+
+    public String getAccountInfo(){
+        return ownerName + " | Acc: " + accountNumber + "| Balance: " + balance;
+    }
 }
