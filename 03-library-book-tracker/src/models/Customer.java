@@ -26,6 +26,6 @@ public class Customer{
 
     @Override
     public String toString(){
-        return "Customer: "+ name +"(ID: " + customerId + "";
+        return "Customer: "+ name +"(ID: " + customerId + ")";
     }
 }
