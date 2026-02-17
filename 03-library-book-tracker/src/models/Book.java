@@ -1,4 +1,4 @@
-package models;
+package models;  
 
 public class Book {
     // === FIELDS ===
@@ -7,9 +7,8 @@ public class Book {
     private String isbn;
     private boolean isAvailable;
     
-    // === CONSTRUCTOR (C - Creation) ===
+    // === CONSTRUCTOR ===
     public Book(String title, String author, String isbn) {
-        // Simple validation
         if (title == null || title.trim().isEmpty()) {
             throw new IllegalArgumentException("Title is required");
         }
@@ -20,13 +19,18 @@ public class Book {
             throw new IllegalArgumentException("ISBN is required");
         }
         
+        String cleanIsbn = isbn.replace("-", "");
+        if (cleanIsbn.length() != 10 && cleanIsbn.length() != 13){
+            throw new IllegalArgumentException("ISBN must be 10 or 13 digits");
+        }
+
         this.title = title.trim();
         this.author = author.trim();
         this.isbn = isbn.trim();
-        this.isAvailable = true; // New books are available
+        this.isAvailable = true;
     }
     
-    // === BEHAVIOR (B - Behavior) ===
+    // === BEHAVIOR ===
     public void borrowBook() {
         if (isAvailable) {
             isAvailable = false;
@@ -45,7 +49,7 @@ public class Book {
         }
     }
     
-    // === IDENTITY & EQUALITY (I & E) ===
+    // === EQUALITY ===
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -59,7 +63,7 @@ public class Book {
         return isbn.hashCode();
     }
     
-    // === GETTERS (Data Access) ===
+    // === GETTERS ===
     public String getTitle() { return title; }
     public String getAuthor() { return author; }
     public String getIsbn() { return isbn; }
