@@ -10,7 +10,7 @@ public class PayrollSystem {
     private static HashMap<String, Employee> employees = new HashMap<>();
     
     public static void main(String[] args) {
-        System.out.println("🎯 EMPLOYEE PAYROLL SYSTEM");
+        System.out.println(" EMPLOYEE PAYROLL SYSTEM");
         
         while(true) {
             showMenu();
